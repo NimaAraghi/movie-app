@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import { getMovieById, getMovieImages, getMovieVideos } from "@/lib/tmdb";
 import React from "react";
 
-export const revalidate = 60 * 2;
+export const revalidate = 120;
 
 export default async function Movie({
   params,

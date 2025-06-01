@@ -1,4 +1,3 @@
-import Hero from "@/components/Hero";
 import InfiniteMovieList from "@/components/InfiniteMovieList";
 import { getUpcomingMovies } from "@/lib/tmdb";
 import React, { Suspense } from "react";

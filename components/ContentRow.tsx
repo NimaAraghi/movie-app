@@ -2,7 +2,6 @@ import React from "react";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 import { Video } from "@/types/video";
 import { Image } from "@/types/image";
-import { Card, CardContent, CardFooter } from "./ui/card";
 import { IMAGE_URL, YT_IMAGE_URL } from "@/lib/constants";
 import Title from "./Title";
 import Link from "next/link";
@@ -14,15 +13,18 @@ export function VideoRow({ data, id }: { data: Video[]; id: number }) {
       <Carousel
         className='w-full'
         orientation='horizontal'
-        opts={{ align: "start", loop: true }}>
+        opts={{ align: "start", loop: true }}
+      >
         <CarouselContent>
           {data.map((item, index) => (
             <CarouselItem
               key={index}
-              className='basis-1/2 lg:basis-1/3 xl:basis-1/4'>
+              className='basis-1/2 lg:basis-1/3 xl:basis-1/4'
+            >
               <Link
                 href={`/movies/${id}/videos/${item.id}`}
-                className='flex flex-col gap-2'>
+                className='flex flex-col gap-2'
+              >
                 <img
                   className='aspect-video object-cover'
                   src={`${YT_IMAGE_URL}${item.key}/0.jpg`}
@@ -48,12 +50,14 @@ export function ImageRow({ data, id }: { data: Image[]; id: number }) {
       <Carousel
         className='w-full'
         orientation='horizontal'
-        opts={{ align: "start", loop: true }}>
+        opts={{ align: "start", loop: true }}
+      >
         <CarouselContent>
           {data.map((item, index) => (
             <CarouselItem
               key={index}
-              className='basis-1/2 lg:basis-1/3 xl:basis-1/4'>
+              className='basis-1/2 lg:basis-1/3 xl:basis-1/4'
+            >
               <Link href={`/movies/${id}/images/${item.file_path}`}>
                 <img
                   className='aspect-video object-cover'

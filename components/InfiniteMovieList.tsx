@@ -2,7 +2,7 @@
 
 import { Movie } from "@/types/movie";
 import { useCallback, useEffect, useRef, useState } from "react";
-import MoivesContainer from "./MoviesContainer";
+import MoviesContainer from "./MoviesContainer";
 import Hero from "./Hero";
 import SortMovies from "./SortMovies";
 import Spinner from "./Spinner";
@@ -67,7 +67,7 @@ export default function InfiniteMovieList({
     } finally {
       setIsLoading(false);
     }
-  }, [hasMore, isLoading, page, api_endpoint]);
+  }, [hasMore, isLoading, page, sortBy, api_endpoint]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -81,13 +81,15 @@ export default function InfiniteMovieList({
       }
     );
 
-    if (observerTargetRef.current) {
-      observer.observe(observerTargetRef.current);
+    const currentRef = observerTargetRef.current; // ✅ cache ref
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (observerTargetRef.current) {
-        observer.unobserve(observerTargetRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, [hasMore, isLoading, loadMoreMovies]);
@@ -101,7 +103,7 @@ export default function InfiniteMovieList({
           <SortMovies value={sortBy} onChange={setSortBy} />
         )}
       </div>
-      <MoivesContainer movies={movies} />
+      <MoviesContainer movies={movies} />
 
       {isLoading && <Spinner />}
 
@@ -110,7 +112,7 @@ export default function InfiniteMovieList({
         !isLoading &&
         movies.length > 0 && ( // Show only if no more, not loading, and some movies are shown
           <div className='text-center py-8 text-gray-500'>
-            <p>You've reached the end of the list.</p>
+            You&apos;ve reached the end of the list.
           </div>
         )}
       {/* Invisible element for IntersectionObserver to watch */}

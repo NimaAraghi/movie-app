@@ -6,7 +6,7 @@ import {
   getUpcomingMovies,
 } from "../lib/tmdb";
 
-export const revalidate = 60 * 60 * 12;
+export const revalidate = 43200;
 
 export default async function HomePage() {
   const [popularMovies, topRated, upComing] = await Promise.all([

@@ -1,4 +1,3 @@
-import Hero from "@/components/Hero";
 import InfiniteMovieList from "@/components/InfiniteMovieList";
 import { getGenreById } from "@/lib/genres";
 import { getMovies } from "@/lib/tmdb";

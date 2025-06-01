@@ -17,13 +17,15 @@ export default function Navbar() {
           className='h-8 w-8'
           variant='ghost'
           size='icon'
-          onClick={toggleSidebar}>
+          onClick={toggleSidebar}
+        >
           <SidebarIcon />
         </Button>
         <SearchForm className='w-1/2 md:w-1/3' />
         <Link
-          href='https://github.com/NimaAraghi/'
-          className='flex items-center justify-center size-9 rounded-full hover:bg-accent transition-all duration-300'>
+          href='https://github.com/NimaAraghi/movie-app'
+          className='flex items-center justify-center size-9 rounded-full hover:bg-accent transition-all duration-300'
+        >
           <Github className='size-icon' />
         </Link>
       </div>

@@ -27,10 +27,13 @@ export default async function Image({
             />
           </Link>
           <div className='my-auto'>
-            <p className='text-xl font-bold'>Images of "{movie.title}"</p>
+            <p className='text-xl font-bold'>
+              Images of &quot;{movie.title}&quot;
+            </p>
             <Link
               href={`/movies/${id}`}
-              className='font-semibold text-base text-blue-300'>
+              className='font-semibold text-base text-blue-300'
+            >
               {movie.title}
             </Link>
           </div>
@@ -41,7 +44,8 @@ export default async function Image({
           {images.map((image) => (
             <Link
               href={`/movies/${id}/images/${image.file_path}`}
-              key={image.file_path}>
+              key={image.file_path}
+            >
               <img
                 className={`aspect-video object-cover rounded-md ${
                   image.file_path === `/${imageId}`
@@ -49,6 +53,7 @@ export default async function Image({
                     : ""
                 }`}
                 src={`${IMAGE_URL}${image.file_path}`}
+                alt={movie.title}
               />
             </Link>
           ))}

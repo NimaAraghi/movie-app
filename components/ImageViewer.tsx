@@ -23,7 +23,10 @@ export default function ImageViewer({
 
   return (
     <div className='w-full relative'>
-      <img src={`${IMAGE_URL}${images[currentIndex]?.file_path}`} alt='' />
+      <img
+        src={`${IMAGE_URL}${images[currentIndex]?.file_path}`}
+        alt='images'
+      />
       <Button
         disabled={currentIndex === 0}
         onClick={() =>
@@ -31,7 +34,8 @@ export default function ImageViewer({
         }
         className='absolute top-1/2 left-0 ml-5 rounded-full cursor-pointer'
         variant='secondary'
-        size='icon'>
+        size='icon'
+      >
         <ChevronLeft />
       </Button>
       <Button
@@ -41,7 +45,8 @@ export default function ImageViewer({
         className='absolute top-1/2 right-0 mr-5 rounded-full cursor-pointer'
         variant='secondary'
         size='icon'
-        disabled={currentIndex === images.length - 1}>
+        disabled={currentIndex === images.length - 1}
+      >
         <ChevronRight />
       </Button>
     </div>
