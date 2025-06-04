@@ -1,6 +1,8 @@
 "use client";
 
 import InfiniteMovieList from "@/components/InfiniteMovieList";
+import { Movie } from "@/types/movie";
+import { TmdbApiResponse } from "@/types/tmdbApiResponse";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -8,7 +10,7 @@ export default function Search() {
   const searchParams = useSearchParams();
   const query = searchParams.get("q") || "";
 
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<TmdbApiResponse<Movie> | null>(null);
 
   useEffect(() => {
     async function fetchData() {
