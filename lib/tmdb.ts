@@ -12,12 +12,10 @@ export function getMovies(
   sortBy: string = "popularity.desc",
   genreId: number | undefined = undefined
 ): Promise<TmdbApiResponse<Movie>> {
-  console.log(
-    `Fetching movies with page: ${page}, sortBy: ${sortBy}, genreId: ${genreId}`
-  );
+  const today = new Date().toISOString().split("T")[0]; // Get today's date in YYYY-MM-DD format
 
   return fetch(
-    `${BASE_URL}/discover/movie?language=en-US&page=${page}&sort_by=${sortBy}${
+    `${BASE_URL}/discover/movie?language=en-US&page=${page}&primary_release_date.gte=1927-02-06&primary_release_date.lte=${today}&sort_by=${sortBy}${
       genreId ? `&with_genres=${genreId}` : ""
     }`,
     configs

@@ -56,7 +56,7 @@ export default function InfiniteMovieList({
       const nextPage = page + 1;
       const url = `${api_endpoint}${
         api_endpoint.includes("?") ? "&" : "?"
-      }page=1&sort_by=${sortBy}`;
+      }page=${nextPage}&sort_by=${sortBy}`;
       const data = await fetch(url).then((res) => res.json());
 
       setMovies((prevMovies) => [...prevMovies, ...data.results]);

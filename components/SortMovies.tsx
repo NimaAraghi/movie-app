@@ -23,8 +23,8 @@ export default function SortMovies({
         <SelectItem value='popular.desc'>Most Popular</SelectItem>
         <SelectItem value='vote_count.desc'>Most Voted</SelectItem>
         <SelectItem value='vote_average.desc'>Top Rated</SelectItem>
-        <SelectItem value='primary_release_date.desc'>New to Old</SelectItem>
-        <SelectItem value='primary_release_date.asc'>Old to New</SelectItem>
+        <SelectItem value='release_date.desc'>New to Old</SelectItem>
+        <SelectItem value='release_date.asc'>Old to New</SelectItem>
       </SelectContent>
     </Select>
   );

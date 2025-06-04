@@ -12,6 +12,8 @@ export default async function Movie({
 }) {
   const { id } = await params;
   const movie = await getMovieById(Number(id));
+  console.log(movie.release_date);
+
   const videos = await getMovieVideos(Number(id));
   const images = await getMovieImages(Number(id));
 
