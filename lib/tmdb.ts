@@ -70,6 +70,21 @@ export function getMovieById(id: number): Promise<Movie> {
   });
 }
 
+export function getMovieByQuery(
+  page: number = 1,
+  query: string
+): Promise<TmdbApiResponse<Movie>> {
+  return fetch(
+    `${BASE_URL}/search/movie?query=${encodeURIComponent(
+      query
+    )}&language=en-US&page=${page}`,
+    configs
+  ).then((res) => {
+    if (!res.ok) throw new Error("Failed to fetch movie by query!");
+    return res.json() as Promise<TmdbApiResponse<Movie>>;
+  });
+}
+
 export function getMovieVideos(id: number): Promise<Video[]> {
   return fetch(`${BASE_URL}/movie/${id}/videos?language=en-US`, configs)
     .then((res) => {

@@ -20,7 +20,7 @@ export default function InfiniteMovieList({
   title = "Movies",
   api_endpoint,
 }: InfiniteMovieListProps) {
-  const [movies, setMovies] = useState<Movie[]>(initialMovies);
+  const [movies, setMovies] = useState<Movie[] | []>(initialMovies);
   const [page, setPage] = useState<number>(1);
   const [hasMore, setHasMore] = useState<boolean>(initialHasMore);
   const [isLoading, setIsLoading] = useState(false);
@@ -96,7 +96,6 @@ export default function InfiniteMovieList({
 
   return (
     <div className='w-full'>
-      <Hero movie={movies[0]} />
       <div className='flex justify-between items-center mb-4'>
         <h1 className='font-bold text-2xl'>{title}</h1>
         {api_endpoint.includes("discover") && (
