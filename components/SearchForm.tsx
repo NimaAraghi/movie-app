@@ -3,8 +3,7 @@
 import { Search } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { SidebarInput } from "@/components/ui/sidebar";
-import { useSearchParams } from "next/navigation";
-import { useRouter } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 
 export default function SearchForm({ ...props }: React.ComponentProps<"form">) {
   const router = useRouter();

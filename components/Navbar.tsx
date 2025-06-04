@@ -6,6 +6,7 @@ import SearchForm from "@/components/SearchForm";
 import { Button } from "@/components/ui/button";
 import { useSidebar } from "@/components/ui/sidebar";
 import Link from "next/link";
+import { Suspense } from "react";
 
 export default function Navbar() {
   const { toggleSidebar } = useSidebar();
@@ -21,7 +22,9 @@ export default function Navbar() {
         >
           <SidebarIcon />
         </Button>
-        <SearchForm className='w-1/2 md:w-1/3' />
+        <Suspense>
+          <SearchForm className='w-1/2 md:w-1/3' />
+        </Suspense>
         <Link
           href='https://github.com/NimaAraghi/movie-app'
           className='flex items-center justify-center size-9 rounded-full hover:bg-accent transition-all duration-300'

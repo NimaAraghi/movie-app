@@ -9,8 +9,6 @@ export async function GET(req: NextRequest) {
 
   const response = await getMovieByQuery(Number(page), query);
 
-  console.log("response =>", response);
-
   return new Response(JSON.stringify(response), {
     status: 200,
     headers: { "Content-Type": "application/json" },

@@ -4,9 +4,9 @@ import InfiniteMovieList from "@/components/InfiniteMovieList";
 import { Movie } from "@/types/movie";
 import { TmdbApiResponse } from "@/types/tmdbApiResponse";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 
-export default function Search() {
+function SearchContent() {
   const searchParams = useSearchParams();
   const query = searchParams.get("q") || "";
 
@@ -32,5 +32,13 @@ export default function Search() {
         />
       )}
     </>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SearchContent />
+    </Suspense>
   );
 }
