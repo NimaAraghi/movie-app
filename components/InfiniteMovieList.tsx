@@ -3,7 +3,6 @@
 import { Movie } from "@/types/movie";
 import { useCallback, useEffect, useRef, useState } from "react";
 import MoviesContainer from "./MoviesContainer";
-import Hero from "./Hero";
 import SortMovies from "./SortMovies";
 import Spinner from "./Spinner";
 
