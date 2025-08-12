@@ -36,7 +36,7 @@ export default function Hero({
             {movie.genres.map((genre, idx) => (
               <Link
                 className='text-blue-400'
-                href={`/moives/discover?genreId=${genre.id}`}
+                href={`/moives/discover/${genre.id}`}
                 key={genre.id}
               >
                 {genre.name}
