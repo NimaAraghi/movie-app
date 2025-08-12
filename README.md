@@ -78,32 +78,4 @@ movie-app/
 
 ---
 
-## Acknowledgements
-
-- [TMDB API](https://www.themoviedb.org/) for movie data and images.
-- [shadcn/ui](https://ui.shadcn.com/) for beautiful and accessible UI components.
-- [Tailwind CSS](https://tailwindcss.com/) for utility-first CSS framework.
-
----
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-## Screenshots
-
-<!-- You can add screenshots to showcase your UI. Example: -->
-<!-- ![Home Page](./public/screenshots/home.png) -->
-
----
-
-## Contribution
-
-Contributions, issues and feature requests are welcome!  
-Feel free to open an [issue](https://github.com/NimaAraghi/movie-app/issues) or submit a pull request.
-
----
-
 > Made with ❤️ using Next.js and TMDB API.
